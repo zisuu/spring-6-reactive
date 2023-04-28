@@ -15,6 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @DataR2dbcTest
 @Import(DatabaseConfig.class)
+public
 class BeerRepositoryTest {
 
     @Autowired
@@ -33,13 +34,13 @@ class BeerRepositoryTest {
                         System.out.println("Saved Beer: " + beer.toString()));
     }
 
-    Beer getTestBeer() {
+    public static Beer getTestBeer() {
         return Beer.builder()
-                .beerName("Test Beer")
-                .beerStyle("Test Style")
-                .upc("123456789012")
-                .quantityOnHand(100)
-                .price(new BigDecimal("12.99"))
+                .beerName("Space Dust")
+                .beerStyle("IPA")
+                .price(BigDecimal.TEN)
+                .quantityOnHand(12)
+                .upc("123213")
                 .build();
     }
 }
